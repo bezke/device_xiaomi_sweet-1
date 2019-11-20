@@ -1,0 +1,2 @@
+# Allow to use wakelock
+wakelock_use(vendor_hal_citsensorservice_xiaomi_default)

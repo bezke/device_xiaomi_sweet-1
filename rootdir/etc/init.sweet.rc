@@ -12,3 +12,9 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
 on boot
     chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param
     chmod 0660 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param
+
+service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
+    override
+    class late_start
+    user system
+    group system input wakelock
