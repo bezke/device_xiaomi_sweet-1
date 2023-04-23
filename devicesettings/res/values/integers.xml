@@ -25,4 +25,16 @@
 
     <integer name="touch_resistant_default">2</integer>
     <integer name="touch_resistant_max">3</integer>
+    
+   <!-- Haptic Feedback Levels -->
+   <integer name="haptic_level_default">80</integer>
+   <integer name="haptic_level_max">100</integer>
+   
+    <!-- Flashlight Brightness Levels -->
+    <integer name="flashlight_brightness_default">100</integer>
+    <!-- max(200) - min(10) -->
+    <integer name="flashlight_brightness_max">190</integer>
+        
+    <!-- KProfiles Levels -->
+    <integer name="kprofiles_default">0</integer>
 </resources>

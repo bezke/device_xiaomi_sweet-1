@@ -3,6 +3,11 @@ genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/idle_encoder_mask    
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/idle_state                u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/idle_timeout_ms           u:object_r:vendor_sysfs_graphics:s0
 
+# Extcon sysfs
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon  u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,usb-pdphy@1700/extcon   u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm6150@0:qcom,qpnp-smb5/extcon        u:object_r:sysfs_extcon:s0
 
 # LED
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/left u:object_r:vendor_sysfs_graphics:s0
@@ -66,8 +71,20 @@ genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/wakeup/wakeup7         
 # Power
 genfscon proc /sys/kernel/sched_energy_aware u:object_r:proc_sched_energy_aware:s0
 
+# Flashlight Brightness
+genfscon sysfs /class/leds/led:torch_0/max_brightness u:object_r:sysfs_leds:s0
+
 # Haptic
 genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-005a/ulevel u:object_r:sysfs_vibrator:s0
+
+# XiaomiParts (Sound-Control nodes)
+genfscon sysfs /kernel/sound_control/headphone_gain                u:object_r:sysfs_gain:s0
+genfscon sysfs /kernel/sound_control/mic_gain                      u:object_r:sysfs_gain:s0
+genfscon sysfs /kernel/sound_control/speaker_gain                  u:object_r:sysfs_gain:s0
+
+# KProfiles
+genfscon sysfs /module/kprofiles/parameters/auto_kprofiles u:object_r:vendor_sysfs_kprofiles:s0
+genfscon sysfs /module/kprofiles/parameters/kp_mode           u:object_r:vendor_sysfs_kprofiles:s0
 
 # bq2597x charge pump
 genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-0051/power_supply/bq2597x-standalone u:object_r:vendor_sysfs_usb_supply:s0

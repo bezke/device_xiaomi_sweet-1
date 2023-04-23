@@ -8,9 +8,11 @@
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
 
     <application
         android:allowBackup="true"
@@ -35,7 +37,7 @@
             </intent-filter>
             <meta-data
                 android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.system" />
+                android:value="com.android.settings.category.ia.homepage" />
             <meta-data
                 android:name="com.android.settings.summary"
                 android:resource="@string/device_settings_summary" />
@@ -44,6 +46,17 @@
                 android:resource="@drawable/ic_main_settings" />
         </activity>
 
+        <activity
+            android:name=".audioamplification.AudioAmplificationActivity"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true"
+            android:label="@string/audio_amplification_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
         <activity
             android:name=".dirac.DiracActivity"
             android:label="@string/dirac_title"
@@ -102,6 +115,79 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".refreshrate.RefreshActivity"
+            android:label="@string/refresh_title"
+            android:exported="true"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".refreshrate.RefreshService"
+            android:permission="RefreshService">
+        </service>
+        
+        <!-- Jitter Test Activity -->
+        <activity
+            android:name=".uibench.JitterTestActivity"
+            android:exported="true"
+            android:label="@string/jitter_test_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".flashlight.FlashlightBrightnessActivity"
+            android:label="@string/flashlight_title"
+            android:exported="true"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".haptic.HapticLevelActivity"
+            android:label="@string/haptic_title"
+            android:exported="true"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".kprofiles.KProfilesSettingsActivity"
+            android:label="@string/kprofiles_title"
+            android:exported="true"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <service
+            android:name=".kprofiles.KProfilesModesTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_kprofiles"
+            android:label="@string/kprofiles_modes_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        
     </application>
 </manifest>
 

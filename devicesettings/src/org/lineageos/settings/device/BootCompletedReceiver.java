@@ -27,8 +27,14 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.util.Log;
 
+import org.lineageos.settings.device.haptic.HapticUtils;
+
 import androidx.preference.PreferenceManager;
+import org.lineageos.settings.device.flashlight.FlashlightUtils;
+import org.lineageos.settings.device.kprofiles.KProfilesUtils;
 import org.lineageos.settings.device.thermal.ThermalUtils;
+import org.lineageos.settings.device.refreshrate.RefreshUtils;
+import org.lineageos.settings.device.audioamplification.AudioAmplificationUtils;
 
 import org.lineageos.settings.device.Constants;
 import org.lineageos.settings.device.dirac.DiracUtils;
@@ -52,6 +58,11 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         } catch (Exception e) {
             Log.d(TAG, "Dirac is not present in system");
         }
+        HapticUtils.restoreLevel(context);
+        FlashlightUtils.restoreBrightness(context);
         ThermalUtils.startService(context);
+        RefreshUtils.startService(context);
+        AudioAmplificationUtils.restoreAudioAmplification(context);
+        KProfilesUtils.restoreKProfiles(context);
     }
 }

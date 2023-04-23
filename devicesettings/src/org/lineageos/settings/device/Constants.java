@@ -15,4 +15,17 @@ public class Constants {
     public static final String DISPPARAM_DC_OFF = "0x50000";
 
     public static final String DEFAULT_REFRESH_RATE_CONFIG = "120-120";
+        
+    public static final String KEY_HEADPHONE_GAIN = "headphone_gain";
+    public static final String HEADPHONE_GAIN_NODE = "/sys/kernel/sound_control/headphone_gain";
+    public static final String KEY_MICROPHONE_GAIN = "microphone_gain";
+    public static final String MICROPHONE_GAIN_NODE = "/sys/kernel/sound_control/mic_gain";
+    public static final String KEY_SPEAKER_GAIN = "speaker_gain";
+    public static final String SPEAKER_GAIN_NODE = "/sys/kernel/sound_control/speaker_gain";
+    
+    public static final String KEY_KPROFILES_AUTO = "pref_kprofiles_auto";
+    public static final String KPROFILES_AUTO_NODE = "/sys/module/kprofiles/parameters/auto_kprofiles";
+    public static final String KEY_KPROFILES_MODES = "pref_kprofiles_modes";
+    public static final String KPROFILES_MODES_NODE = "/sys/module/kprofiles/parameters/kp_mode";
+    public static final String KPROFILES_MODES_INFO = "pref_kprofiles_modes_info";
 }

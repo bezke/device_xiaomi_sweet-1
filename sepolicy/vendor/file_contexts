@@ -79,3 +79,8 @@
 
 # Dolby
 /(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service                                        u:object_r:hal_dms_default_exec:s0
+
+# XiaomiParts (Sound-Control nodes)
+/sys/kernel/sound_control/headphone_gain                u:object_r:sysfs_gain:s0
+/sys/kernel/sound_control/mic_gain                      u:object_r:sysfs_gain:s0
+/sys/kernel/sound_control/speaker_gain                  u:object_r:sysfs_gain:s0

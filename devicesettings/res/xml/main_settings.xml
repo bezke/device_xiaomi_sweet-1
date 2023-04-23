@@ -31,6 +31,16 @@
             android:key="pref_refresh_rate_info"
             android:icon="@drawable/ic_info"/>
 
+        <Preference
+            android:icon="@drawable/ic_refresh_rate"
+            android:title="@string/refresh_title"
+            android:summary="@string/refresh_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="org.lineageos.settings.device.refreshrate.RefreshActivity"
+                android:targetPackage="org.lineageos.settings.device" />
+        </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -76,6 +86,16 @@
         </Preference>
 
         <Preference
+            android:icon="@drawable/ic_audio_amplification"
+            android:title="@string/audio_amplification_title"
+            android:summary="@string/audio_amplification_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="org.lineageos.settings.device.audioamplification.AudioAmplificationActivity"
+                android:targetPackage="org.lineageos.settings.device" />
+        </Preference>
+        
+        <Preference
             android:icon="@drawable/ic_clear_speaker"
             android:title="@string/clear_speaker_title"
             android:summary="@string/clear_speaker_summary">
@@ -85,6 +105,52 @@
                 android:targetPackage="org.lineageos.settings.device" />
         </Preference>
 
+        <Preference
+            android:icon="@drawable/ic_phone_vibrate"
+            android:title="@string/haptic_title"
+            android:summary="@string/haptic_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="org.lineageos.settings.device.haptic.HapticLevelActivity"
+                android:targetPackage="org.lineageos.settings.device" />
+        </Preference>
+      
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="stuffs_category"
+        android:title="@string/stuffs_title">
+
+        <Preference
+            android:icon="@drawable/ic_kprofiles"
+            android:title="@string/kprofiles_title"
+            android:summary="@string/kprofiles_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="org.lineageos.settings.device.kprofiles.KProfilesSettingsActivity"
+                android:targetPackage="org.lineageos.settings.device" />
+        </Preference>
+        
+        <Preference
+            android:icon="@drawable/ic_flashlight"
+            android:title="@string/flashlight_title"
+            android:summary="@string/flashlight_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="org.lineageos.settings.device.flashlight.FlashlightBrightnessActivity"
+                android:targetPackage="org.lineageos.settings.device" />
+        </Preference>
+        
+        <Preference
+            android:icon="@drawable/ic_jitter"
+            android:title="@string/jitter_test_title"
+            android:summary="@string/jitter_test_summary">
+            <intent 
+                android:action="android.intent.action.MAIN"
+                android:targetClass="org.lineageos.settings.device.uibench.JitterTestActivity"
+                android:targetPackage="org.lineageos.settings.device" />
+        </Preference>
+        
+     </PreferenceCategory>
+        
 </PreferenceScreen>
